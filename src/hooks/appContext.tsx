@@ -7,10 +7,17 @@ type ProviderProps = {
 const Context = createContext(null)
 
 export function ContextProvider({ children }: ProviderProps): JSX.Element {
-  const [context, setContext] = useState({})
+  const [context, setContext] = useState({teste: true})
+
+  const updateContext = (values) => {
+    setContext({
+      ...context,
+      ...values
+    })
+  }
 
   return (
-    <Context.Provider value={[context, setContext]}>
+    <Context.Provider value={[context, updateContext]}>
       {children}
     </Context.Provider>
   )
