@@ -4,12 +4,10 @@ import { ContextProvider } from '../hooks/appContext'
 
 import '../styles/globals.css'
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
-  return (
-    <ContextProvider>
-      <Component {...pageProps} />
-    </ContextProvider>
-  )
-}
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
+  <ContextProvider>
+    <Component {...pageProps} />
+  </ContextProvider>
+)
 
 export default MyApp

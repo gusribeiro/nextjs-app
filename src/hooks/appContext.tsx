@@ -4,12 +4,14 @@ type ProviderProps = {
   children: ReactNode
 }
 
+const initialState = {}
+
 const Context = createContext(null)
 
 export function ContextProvider({ children }: ProviderProps): JSX.Element {
-  const [context, setContext] = useState({teste: true})
+  const [context, setContext] = useState(initialState)
 
-  const updateContext = (values) => {
+  const updateContext = values => {
     setContext({
       ...context,
       ...values
